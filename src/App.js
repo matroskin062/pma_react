@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+import { useEffect, useState } from 'react';
+import WeatherCard from './components/WeatherCard';
+
+const API_KEY = '166f41f09442b35e807cb8bce5b3cfe6';
+const url = `https://api.openweathermap.org/data/2.5/onecall?lat=50.45466&lon=30.5238&exclude=minutely,current,hourly,alerts&units=metric&lang=ru&appid=${API_KEY}`;
 
 function App() {
+  const [weather, setWeather] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(url);
+      const { daily } = await response.json();
+      setWeather(daily);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {weather && weather.map((el) => <WeatherCard key={el.dt} {...el} />)}
     </div>
   );
 }
