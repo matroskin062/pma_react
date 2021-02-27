@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 5px 10px;
 }
+
+.Forecast {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+}

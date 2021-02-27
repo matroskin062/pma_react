@@ -5,8 +5,8 @@ import {
   formatDate,
   convertPressure,
   convertWindDirection,
-  getAverageFeelsLike,
 } from '../../utils';
+
 import humidityIco from '../../assets/humidity_min.svg';
 import pressureIco from '../../assets/pressure_min.svg';
 import windIco from '../../assets/wind_min.svg';
@@ -32,8 +32,6 @@ const CurrentWeather = ({
   const { weekday, date, month, year } = formatDate(dt);
   const { hours: sunriseHours, minutes: sunriseMinutes } = formatDate(sunrise);
   const { hours: sunsetHours, minutes: sunsetMinutes } = formatDate(sunset);
-  const { min, max } = temp;
-  const feelsLike = getAverageFeelsLike(feels_like);
 
   return (
     <div className={styles.Container}>
@@ -46,18 +44,12 @@ const CurrentWeather = ({
             <img src={`${img_api}/${icon}@4x.png`} alt={description} />
           </div>
           <div>
-            <h1>Температура:</h1>
-            <div>
-              <h3>
-                Мин: {roundTemp(min)} <span>&deg;C</span>
-              </h3>
-              <h3>
-                Макс: {roundTemp(max)}
-                <span>&deg;C</span>
-              </h3>
-            </div>
+            <h1>
+              Температура: {roundTemp(temp)}
+              <span>&deg;C</span>
+            </h1>
             <h4>
-              Чувствуется как: {roundTemp(feelsLike)}
+              Чувствуется как: {roundTemp(feels_like)}
               <span>&deg;C</span>
             </h4>
             <h4>{description}</h4>

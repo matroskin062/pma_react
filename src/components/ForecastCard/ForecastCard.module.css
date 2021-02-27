@@ -1,0 +1,28 @@
+.Card {
+  background-color: rgba(250, 250, 250, 0.4);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Title {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.Description {
+  margin-bottom: 5px;
+}
+
+.Temperature {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+}
