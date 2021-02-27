@@ -17,7 +17,7 @@ function App() {
   const fetchData = async () => {
     const response = await fetch(url);
     const { daily, current } = await response.json();
-    setForecast(daily);
+    setForecast(daily.slice(1));
     setCurrent(current);
   };
 
