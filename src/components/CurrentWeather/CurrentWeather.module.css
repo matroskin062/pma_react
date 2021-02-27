@@ -66,3 +66,13 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 570px) {
+  .Temperature img {
+    width: 150px;
+    height: 150px;
+  }
+  .Date {
+    font-size: 25px;
+  }
+}

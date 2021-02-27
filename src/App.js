@@ -19,10 +19,7 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <div className={styles.Forecast}>
-        {forecast &&
-          forecast.map((el) => <CurrentWeather key={el.dt} {...el} />)}
-      </div>
+      {forecast && forecast.map((el) => <CurrentWeather key={el.dt} {...el} />)}
     </div>
   );
 }
