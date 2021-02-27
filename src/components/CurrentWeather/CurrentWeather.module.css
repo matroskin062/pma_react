@@ -1,0 +1,68 @@
+.Container {
+  background-color: rgba(255, 255, 255, 0.514);
+  border-radius: 10px;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+}
+
+.Date {
+  text-align: center;
+}
+
+.Weather {
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.Temperature {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.Temperature > div {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.Temperature > div > p {
+  margin-top: 5px;
+}
+
+.Info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.315);
+  border-radius: 10px;
+}
+
+.Info div {
+  padding: 10px 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.Info div > img {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 840px) {
+  .Temperature h1 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 760px) {
+  .Weather {
+    flex-direction: column;
+  }
+}
