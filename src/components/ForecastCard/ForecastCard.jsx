@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CurrentWeather.module.css';
+import styles from './ForecastCard.module.css';
 import {
   roundTemp,
   formatDate,
